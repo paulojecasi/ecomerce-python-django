@@ -1,0 +1,85 @@
+{% extends 'listaPedidos.html' %}
+
+{% block main %}
+{% load static %}
+
+    <!--
+      OBS, para calculos no JS é utilizado as campos das seguntes tags
+        tag CLASS  vai os campos para somar, multplica e etc..
+        tag ID vira os resultados
+    -->
+
+
+    <div class = "itensNoPedido">
+        <img id = "fotoCabecalhoItemPedido"
+           src= {% static 'css/icons/itens.png' %} />
+
+        <h1> Itens do Pedido </h1>
+        <h2>  {{ Id_pedido }}  </h2>
+
+        <a id="voltarAListaPedido"
+              href = "{% url 'listaPedidos' %} "><<  Voltar a Lista de Pedidos </a>
+
+
+        {%for ITENSDOPEDIDO in ListaItensDoPedido%}
+
+
+            <li>
+                {% if ITENSDOPEDIDO.produto.foto %}
+                    <img class = "fotoItensDoPedido"
+                     src =" {{ITENSDOPEDIDO.produto.foto.url}} " />
+                {% else %}
+                    <img class = "fotoItensDoPedido"
+                     src =" {{ITENSDOPEDIDO.produto.url_imagem}} " />
+
+                {% endif %}
+
+                <div id="descricaoDoItemPedido">
+                    <h3>
+                        {{ITENSDOPEDIDO.produto}}
+                    </h3>
+
+                    <!-- CAMPO VALOR UNITARIO -->
+                    <div id =inputValorUnitarioDoItemPedido>
+                            <label> Valor unitario R$  </label>
+                            <input id="valorUnitarioDoItemPedido2"
+                                    class ="valorUnitarioDoItemPedido"
+                                    type="text"
+                                    value = "{{ ITENSDOPEDIDO.valor_unitario }}" >
+
+                    </div>
+
+                    <!-- CAMPO QUANTIDADE  -->
+                    <div id =inputQtProdutoDoItemPedido>
+                            <label> Quantidade  </label>
+                            <input id="qtProdutoDoItemPedido"
+                                    class ="qtProdutoDoItemPedido"
+                                    name="qtProdutoDoItemPedido"
+                                    type="text"
+                                    value = "{{ ITENSDOPEDIDO.quantidade|floatformat:0 }}" >
+                    </div>
+
+
+
+                    <!-- CAMPO VALOR TOTAL  -->
+
+                    <div id =inputValorTotalDoItemPedido>
+                        <label> Valor Total R$  </label>
+                        <input id="valorTotalDoItemPedido2"
+                               class ="valorTotalDoItemPedido"
+                               type="text"
+                               resultado = "readonly"
+                               step="0.01"
+                               value = "{{ ITENSDOPEDIDO.valor_total_item }}" >
+                    </div>
+
+                </div>
+            </li>
+
+        {%endfor%}
+    </div>
+
+
+
+
+{% endblock %}

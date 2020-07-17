@@ -1,0 +1,354 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+    <form class = "LocalizacaoCli">
+        {% csrf_token %}
+        <div class="localizacao">
+            <label id="local">
+                Nos envie sua localização para agilizar entrega:
+            </label>
+            <button class="botaoLocalizacao"
+                    onclick="localizacao()"
+                    type="submit">
+                Enviar Localização
+            </button>
+
+            <script>
+
+                function localizacao(){
+                    alert("ESTTOUM AQUI")
+
+                    if( !('geolocation' in navigator) ) {
+                        alert("Navegador não tem suporte API Geolocation");
+                    }
+
+                    navegator.geolocation.getCurrentPosition(success, error, PositionOptions);
+                    navegator.geolocation.watchPosition(success, error, PositionOptions);
+                 }
+
+            </script>
+
+
+        </div>
+
+
+    </form>
+
+
+
+    <form class="CadClienteForm" action="{% url 'gravaAlteraClienteNovo' user.id %}"
+          method="POST">
+        {% csrf_token %}
+
+        <h3 id="cabecalho1CadCli"> Dados complementares de endereço e entrega do cliente</h3>
+        <h2 id="cabecalhoCadCli">  {{user.first_name}} {{user.last_name}} </h2>
+        <!--
+        {{ form_CadCliente.as_p }}
+        -->
+
+        <!-- campo invisivel type ="hidden" -->
+        <input id="user_id"
+               class="user_id"
+               name ="user_id"
+               type="hidden"
+               readonly="true"
+               {% if user.is_authenticated %}
+                    value= "{{user.id}}"
+               {% else %}
+                    value= ""
+               {% endif %}
+        >
+
+
+        <div class="container">
+            <div id = "email_">
+                <input id="email"
+                    class="email"
+                    name ="email"
+                    type="hidden"
+                    readonly="true"
+                    {% if user.is_authenticated %}
+                        value= "{{user.email}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                >
+            </div>
+
+
+            <div id = "primeiro_nome_">
+                <input id="primeiro_nome"
+                    class="primeiro_nome"
+                    name ="primeiro_nome"
+                    type="hidden"
+                    readonly="true"
+                    {% if user.is_authenticated %}
+                        value= "{{user.first_name}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                >
+            </div>
+            <div id = "sobre_nome_">
+                <input id="sobre_nome"
+                    class="sobre_nome"
+                    name ="sobre_nome"
+                    type="hidden"
+                    readonly="true"
+                    {% if user.is_authenticated %}
+                        value= "{{user.last_name}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                >
+            </div>
+
+
+
+            <div id = "cpf_">
+                <label> CPF </label>
+                <input id="cpf"
+                    class="cpf"
+                    name ="cpf"
+                    type ="text"
+                    value= "{{User_cliente.cliente.cpf}}" >
+            </div>
+            <div id = "endereco_">
+                <label> Endereço </label>
+                <input id="endereco"
+                    class="endereco"
+                    name ="endereco"
+                    type ="text"
+                    value= "{{User_cliente.cliente.endereco}}" >
+            </div>
+            <div id = "numero_">
+                <label> Numero </label>
+                <input id="numero"
+                    class="numero"
+                    name ="numero"
+                    type ="text"
+                    value= "{{User_cliente.cliente.numero}}" >
+            </div>
+
+            <div id = "cep_">
+                <label> CEP </label>
+                <input id="cep"
+                    class="cep"
+                    name ="cep"
+                    type ="text"
+                    value= "{{User_cliente.cliente.cep}}" >
+            </div>
+
+            <div id = "complemento_">
+                <label> Ponto de Referencia </label>
+                <input id="complemento"
+                    class="complemento"
+                    name ="complemento"
+                    type ="text"
+                    value= "{{User_cliente.cliente.complemento}}" >
+            </div>
+
+            <div id = "bairro_">
+                <label> Bairro </label>
+                <input id="bairro"
+                    class="bairro"
+                    name ="bairro"
+                    type ="text"
+                    value= "{{User_cliente.cliente.bairro}}" >
+            </div>
+
+            <div id = "cidade_">
+                <label> Cidade </label>
+                <input id="cidade"
+                    class="cidade"
+                    name ="cidade"
+                    type ="text"
+                    value= "{{User_cliente.cliente.cidade}}" >
+            </div>
+
+            <div id = "estado_">
+                <label> Estado </label>
+                <input id="estado"
+                    class="estado"
+                    name ="estado"
+                    type ="text"
+                    value= "{{User_cliente.cliente.estado}}" >
+            </div>
+
+            <div id = "telcelular_">
+                <label> Telefone Celular </label>
+                <input id="telcelular"
+                    class="telcelular"
+                    name ="telcelular"
+                    type ="tel"
+                    value= "{{User_cliente.cliente.telcelular}}" >
+            </div>
+
+            <div id = "telfixo_">
+                <label> Telefone Fixo </label>
+                <input id="telfixo"
+                    class="telfixo"
+                    name ="telfixo"
+                    type ="tel"
+                    value= "{{User_cliente.cliente.telfixo}}" >
+            </div>
+
+
+            <!------ ENTREGA ---->
+
+
+            <div id = "endEntrega_">
+                <label id="labelEntrega"> Entrega </label>
+                <div id="checkbox">
+                    <input type="checkbox" id="checkboxid" name="checkboxEntrega"
+                           value="marcado" onclick="return check_endereco()"  >
+                    <label for="checkboxid">
+                        O endereço de entrega é o mesmo informado a cima!
+                    </label>
+                </div>
+
+                {% if Cliente_u.nome %}
+
+                   <script>
+
+                    var check_endereco = document.getElementById('checkboxid');
+
+                    check_endereco.onchange = function(){
+                        var checkboxid
+                        if(check_endereco.checked){
+                            document.getElementById("enderecoEnt").value = "{{User_cliente.cliente.endereco}}";
+                            document.getElementById("numeroEnt").value = "{{User_cliente.cliente.numero}}";
+                            document.getElementById("cepEnt").value = "{{User_cliente.cliente.cep}}";
+                            document.getElementById("complementoEnt").value = "{{User_cliente.cliente.complemento}}";
+                            document.getElementById("bairroEnt").value = "{{User_cliente.cliente.bairro}}";
+                            document.getElementById("cidadeEnt").value = "{{User_cliente.cliente.cidade}}";
+                            document.getElementById("estadoEnt").value = "{{User_cliente.cliente.estado}}";
+                        }else{
+                            document.getElementById("enderecoEnt").value = "";
+                            document.getElementById("numeroEnt").value = "";
+                            document.getElementById("cepEnt").value = "";
+                            document.getElementById("complementoEnt").value = "";
+                            document.getElementById("bairroEnt").value = "";
+                            document.getElementById("cidadeEnt").value = "";
+                            document.getElementById("estadoEnt").value = "";
+                        }
+
+                    }
+                   </script>
+                {% else %}
+                   <script>
+                    var check_endereco = document.getElementById('checkboxid');
+
+                    check_endereco.onchange = function(){
+                        var checkboxid
+                        if(check_endereco.checked){
+                            document.getElementById("enderecoEnt").value = document.getElementById("endereco").value;
+                            document.getElementById("numeroEnt").value = document.getElementById("numero").value;
+                            document.getElementById("cepEnt").value = document.getElementById("cep").value;
+                            document.getElementById("complementoEnt").value = document.getElementById("complemento").value;
+                            document.getElementById("bairroEnt").value = document.getElementById("bairro").value;
+                            document.getElementById("cidadeEnt").value = document.getElementById("cidade").value;
+                            document.getElementById("estadoEnt").value = document.getElementById("estado").value;
+                        }else{
+                            document.getElementById("enderecoEnt").value = "";
+                            document.getElementById("numeroEnt").value = "";
+                            document.getElementById("cepEnt").value = "";
+                            document.getElementById("complementoEnt").value = "";
+                            document.getElementById("bairroEnt").value = "";
+                            document.getElementById("cidadeEnt").value = "";
+                            document.getElementById("estadoEnt").value = "";
+                        }
+
+                    }
+                   </script>
+
+
+
+                {% endif %}
+
+                <div id = "enderecoEnt_">
+                    <label> Endereço </label>
+                    <input id="enderecoEnt"
+                        class="enderecoEnt"
+                        name ="enderecoEnt"
+                        type ="text"
+                        value= "{{User_cliente.endereco_entrega.endereco}}" >
+
+
+                </div>
+                <div id = "numeroEnt_">
+                    <label> Numero </label>
+                    <input id="numeroEnt"
+                        class="numeroEnt"
+                        name ="numeroEnt"
+                        type ="text"
+                           value= "{{User_cliente.endereco_entrega.numero}}" >
+
+                </div>
+
+                <div id = "cepEnt_">
+                    <label> CEP </label>
+                    <input id="cepEnt"
+                        class="cepEnt"
+                        name ="cepEnt"
+                        type ="text"
+                           value= "{{User_cliente.endereco_entrega.cep}}" >
+                </div>
+
+                <div id = "complementoEnt_">
+                    <label> Ponto de Referencia </label>
+                    <input id="complementoEnt"
+                        class="complementoEnt"
+                        name ="complementoEnt"
+                        type ="text"
+                           value= "{{User_cliente.endereco_entrega.complemento}}" >
+                </div>
+
+                <div id = "bairroEnt_">
+                    <label> Bairro </label>
+                    <input id="bairroEnt"
+                        class="bairroEnt"
+                        name ="bairroEnt"
+                        type ="text"
+                           value= "{{User_cliente.endereco_entrega.bairro}}" >
+                </div>
+
+                <div id = "cidadeEnt_">
+                    <label> Cidade </label>
+                    <input id="cidadeEnt"
+                        class="cidadeEnt"
+                        name ="cidadeEnt"
+                        type ="text"
+                           value= "{{User_cliente.endereco_entrega.cidade}}" >
+                </div>
+
+                <div id = "estadoEnt_">
+                    <label> Estado </label>
+                    <input id="estadoEnt"
+                        class="estadoEnt"
+                        name ="estadoEnt"
+                        type ="text"
+                           value= "{{User_cliente.endereco_entrega.estado}}" >
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+        {% if User_cliente.cliente.primeiro_nome %}
+            <button id= "alterar" type="submit"> ATUALIZAR </button>
+        {% else %}
+            <button id= "cadastrar" type="submit"> CADASTRAR </button>
+        {% endif %}
+    </form>
+
+
+
+
+{% endblock %}
+

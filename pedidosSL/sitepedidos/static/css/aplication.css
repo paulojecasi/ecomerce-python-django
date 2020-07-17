@@ -1,0 +1,2155 @@
+body {
+    width: 100%;
+    margin: 0px;
+    background: url(img/cvj7.jpg) center;
+    font-family: sans-serif;
+}
+
+
+header#cabecalho{
+    /** border-bottom: 1px rgba(255,255,255) solid; **/
+    width: 100%;
+    height: 195px ;                                /** altura do bloco **/
+
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    /**background-color: rgba(255,255,255);           /** cor de fundo **/
+    background-color: #FFD700;                     /** cor de fundo **/
+
+}
+
+
+/** TITULO  ---------------------------------------- **/
+header#cabecalho h1{
+    font-family: Impact, fantasy;
+    font-size: 42px;
+    color: rgba(255,255,255);
+    position: absolute;
+    left:260px;
+    top:5px;
+
+
+    text-shadow: 2px 2px 2px rgba(0,0,0,.6);
+    margin-top: 0px                    /** margem de cima **/
+    /** margin-bottom: 0px             /** margem de baixo **/
+}
+
+/** sub titulos------------------------------------- **/
+header#cabecalho h3{
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: rgba(255,255,255);
+    text-shadow: 2px 2px 2px rgba(0,0,0,.6);
+    position: absolute;
+}
+
+header#cabecalho h3#sub1{                     /** posicao sub titulo 1 **/
+    left:260px;
+    top:45px;
+}
+
+header#cabecalho h3#sub2{                    /** posicao sub titulo 2 **/
+    left:260px;
+    top:71px;
+}
+
+
+
+
+/** login do sistema ----------------------------------------- **/
+
+.entrar-sistema{
+    /** pra margin AUTO funcionar, tem que definir o height e width **/
+    height: 100px ;                          /** altura do bloco **/
+    width: 220px;
+    margin-left: auto;
+
+    background-color: #FFD700;                     /** cor de fundo **/
+    list-style: none;
+
+
+}
+
+.entrar-sistema a{
+    line-height:40px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.entrar-sistema img#imagem-pessoa-login{
+    margin: 10px 0px 0px 30px;       /** cima,   ,   , esquerda **/
+
+}
+
+.entrar-sistema a#login-sistema{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: blue;
+    text-shadow: 2px 2px 2px white;
+    list-style: none;
+    text-decoration: none;
+    margin: 0px 0px 0px 0px;       /** cima,   ,   , esquerda **/
+
+}
+
+.entrar-sistema a#login-sistema:hover{  /** muda de cor qdo o cursor passa **/
+    color: #1E90FF;
+}
+
+.entrar-sistema a#naoTenhoCadastro, a#OlaUsuario {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #000080;
+    text-shadow: 1px 1px 1px white;
+    margin: 0px 0px 0px 35px;       /** cima,   ,   , esquerda **/
+    font-weight: bold;                        /** fonte em negrito **/
+
+
+}
+
+.entrar-sistema a#naoTenhoCadastro:hover{  /** muda de cor qdo o cursor passa **/
+    color: #1E90FF;
+}
+
+/**
+.entrar-sistema a#OlaUsuario{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: blue;
+    text-shadow: 2px 2px 2px white;
+    position: absolute;
+    top: 65px;
+    left: 1050px;
+    list-style: none;
+
+}
+**/
+.entrar-sistema a#login-sistema:hover{  /** muda de cor qdo o cursor passa **/
+    color: #1E90FF;
+}
+
+.entrar-sistema a#OlaUsuario:hover{  /** muda de cor qdo o cursor passa **/
+    color: #1E90FF;
+}
+
+
+/** importante colocar isso para alinhar lado a lado **/
+header,section,nav,footer,#menu,#produtoEscolhido{
+    display:flex;
+    display:-web-flex;
+    display:-moz-flex;
+}
+
+.telaLogin{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: blue;
+    text-shadow: 2px 2px 2px white;
+    position: absolute;
+    top: 192px;
+    left: 00px;
+    list-style: none;
+    text-decoration: none;
+   /** border: 1px outset rgba(255,255,255); **/
+
+    height: 100% ;                          /** altura do bloco **/
+    width: 100%;
+    margin: auto;
+    background-color: white;
+
+}
+
+
+.telaLogin a#naoTenhoCadastro{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #0000FF;
+    text-shadow: 5px 5px 5px white;
+    position: absolute;
+    top: 190px;
+    left: 533px;
+
+    padding: 10px 10px 10px 27px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+}
+.telaLogin a#naoTenhoCadastro:hover{  /** muda de cor qdo o cursor passa **/
+    color: #1E90FF;
+}
+
+.telaLogin form{
+    height: 22% ;                          /** altura do bloco **/
+    width: 35%;
+    margin: auto;
+    background-color: #DCDCDC;
+    border: 12px solid #D3D3D3;
+    padding: 40px 0px 0px 150px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+    margin-top: 40px                    /** margem de cima **/
+
+
+}
+.botaoEntrar{
+
+    height: 0% ;                          /** altura do bloco **/
+    width: 68%;
+    margin: auto;
+    padding: 0px 0px 0px 0px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+    margin-top: 10px;
+
+
+}
+/** --------------------------------------------------------**/
+
+
+
+
+/** LOGOMARCA **/
+
+header#cabecalho img#icone{
+    position: absolute;
+    height: 155px ;                    /** altura do bloco **/
+    width: 155px;                       /** largura **/
+    left: 10px;
+    top: 1px;
+    border: 18px double rgba(255,255,255);            /** borda e cor da borda **/
+
+}
+
+.menu{
+    margin: 25px 0;
+        /** background-color: rgba(255,255,255); **/
+    background-color: #FFD700;
+    list-style: none;
+        /** alinhamento horizontal no bloco flex-start, center, flex-end  **/
+    justify-content: flex-end;               /** alinha menu a direita **/
+
+}
+
+.menu ul li{
+    display: inline;
+}
+
+.menu ul li a{
+    padding: 0px 10px;
+    display:inline-block;
+
+    font-family: Arial, sans-serif;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;                        /** fonte em negrito **/
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.1);
+    border: 0;
+
+
+}
+
+/** icones **/
+.menu ul li a#cadastro:before {
+    content: url(icons/cadastro.png)
+}
+
+.menu ul li a#pedido:before {
+    content: url(icons/pedidos2.png)
+}
+.menu ul li a#carro:before {
+    content: url(icons/carrinho.png)
+}
+
+.menu ul li a#inicio:before {
+    content: url(icons/casa32.png)
+}
+
+.menu ul li a#contato:before {
+    content: url(icons/contato2.png)
+}
+
+.menu ul li a#sobre:before {
+    content: url(icons/sobre3.png)
+}
+
+
+.menu ul li a:hover{     /** muda de cor qdo o cursor passa **/
+    color: #A9A9A9;
+}
+
+h1#titulo_pedido{                           /** titulo - FAÇA SEU PEDIDO **/
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    color: rgba(255,255,255);
+    text-shadow: 4px 4px 4px rgba(0,0,0,.9);
+    position: absolute;
+    left:50px;
+    top:180px
+
+}
+
+
+/** uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu **/
+
+
+.container_index{
+    height: 100%px ;                          /** altura do bloco **/
+    width: 60%;                              /** largura **/
+    margin-right: auto;
+    background-color: white;
+    list-style: none;
+        /** alinhamento horizontal no bloco flex-start, center, flex-end  **/
+    justify-content: flex-end;
+
+}
+
+.container_index ul li{
+    display: inline;
+
+}
+
+.container_index ul li a{
+    /** display: flex; **/
+
+    display:inline-block;
+    border: 4px outset rgba(255,255,255);
+    align-items:center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(255,255,255);
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0,0,0,.9);
+    height: 250px ;
+    width: 290px;
+
+
+
+}
+
+.container_index ul li a#bebidas{
+
+    background: url(img/bebidas2.jpg) center no-repeat;
+    background-size: 310px 250px;
+
+}
+
+.container_index ul li a#aluguel{
+
+    background: url(img/aluguel.jpg) center  no-repeat;
+    background-size: 310px 250px;
+}
+
+.ladoALadoIndex{
+    float: left;
+    padding: 70px 0px 0px 10px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+}
+
+.container_index ul li a:hover{  /** muda de cor qdo o cursor passa **/
+    color: yellow;
+}
+
+
+
+/** uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu **/
+
+
+
+
+/**  TELA DO PRODUTO ESCOLHIDO **/
+
+.produtoEscolhido{
+
+    /** border: 1px outset rgba(255,255,255);    /** borda e cor da borda **/
+    width: 60%;                                /** largura **/
+    height: auto;
+    margin-right: auto;
+    margin-top: 05px;
+
+    font-size: 20px;                          /** tamanho da fonte **/
+    font-weight: bold;                        /** fonte em negrito **/
+    color: black;                            /** cor da fonte **/
+    text-decoration: none;
+    text-decoration: none;
+    list-style: none;
+    /**text-align: center; **/
+    /** text-shadow: 4px 4px 4px rgba(0,0,0,.9); **/
+
+
+    /** background: url(img/carrogrande.png) center no-repeat; **/
+    /** background: url(img/carrogrande.png) center; **/
+    background-size: 150px 150px;
+    background-color: white;                     /** cor de fundo **/
+    border-radius: 20px 20px 20px 20px ;         /** arredondamento da borda **/
+    position: absolute;
+
+
+}
+
+/** #produtoEscolhido img#imagemProdutoEscolhido{ **/
+
+.imagemProdutoEscolhido{
+
+    height: 60% ;                      /** altura do bloco **/
+    width: 30%;                       /** largura **/
+    margin-right: auto;
+    margin-top: 25px;
+
+    border: 0px solid rgba(0,0,0);        /** borda e cor da borda **/
+    border-radius: 15px 15px 15px 15px;  /** arredondamento da borda **/
+    float: left;
+
+}
+
+.produtoEscolhido div#formataLetra{
+
+    font-size: 25px;                         /** tamanho da fonte **/
+    font-weight: bold;                       /** fonte em negrito **/
+    color: #000;                             /** cor da fonte **/
+    line-height:8px;                        /** espaço entre as linhas **/
+    margin-top: 5px;
+    margin-left: 0px;
+    float: left;
+
+
+}
+
+.produtoEscolhido div#formataLetra p#linha1{
+    font-size: 35px;                          /** tamanho da fonte **/
+}
+
+                /** CAMPO DO VALOR UNITARIO DO ITEM **/
+
+
+.produtoEscolhido div#inputValorUnitario{
+    position: relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 26px;                       /** tamanho da fonte **/
+    top: 2px;
+    margin-right: auto;
+
+}
+
+.produtoEscolhido div#inputValorUnitario input{
+    position:relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 30px;                       /** tamanho da fonte **/
+    background-color: #DCDCDC;                 /** cor de fundo **/
+    text-align: center;
+
+}
+
+.produtoEscolhido div#inputValorUnitario input#campoValorUnitario{ 
+    left:46px;
+    width:165px;
+    height:30px;
+    color: #000;
+   /** display: none; **/
+}
+
+.produtoEscolhido div#inputValorUnitario input#campoValorUnitario2{
+    left:62px;
+    width:165px;
+    height:30px;
+    color: #000;                             /** cor da fonte **/
+    pointer-events:none;
+    outline:none;
+    display: none;
+}
+
+.botaoMaisUm{
+
+    font: bold 34px/24px arial, helvetica, sans-aerif;
+    padding:9px;
+    text-decoration: none;
+    text-align:center;
+    color: white;
+    background: green ;
+    width:70px;
+    height:32px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+    margin-left: 10px;
+ 
+
+}
+
+.botaoMenosUm{
+
+    font: bold 34px/24px arial, helvetica, sans-aerif;
+    padding:9px;
+    text-decoration: none;
+    text-align:center;
+    color: white;
+    background: orange ;
+    width:70px;
+    height:32px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+
+
+}
+
+
+                /** CAMPO DA QUANTIDADE DO ITEM **/
+
+.produtoEscolhido div#inputQuantidade{
+
+    position: relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 26px;                       /** tamanho da fonte **/
+    top: 15px;
+    margin-right: auto;                     /** espaço da borda e texto a cima **/
+  
+
+
+}
+
+.produtoEscolhido div#inputQuantidade input{
+    position:relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 30px;                       /** tamanho da fonte **/
+    background-color: #DCDCDC;                 /** cor de fundo **/
+    text-align: center;
+
+
+}
+
+.produtoEscolhido div#inputQuantidade input#campoQuantidade{
+
+    left:0px;
+    width:100px;
+    height:30px;
+    color: #000;                             /** cor da fonte **/
+
+    pointer-events:none;
+    outline:none;
+}
+
+
+                    /** CAMPO DOS VALORES TOTAIS DOS ITENS **/
+
+.produtoEscolhido div#inputCampoTotal{
+
+    position: relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 26px;                       /** tamanho da fonte **/
+    top: 35px;
+    margin-right: auto;                     /** espaço da borda e texto a cima **/
+  
+    pointer-events:none;
+    outline:none;
+
+}
+
+.produtoEscolhido div#inputCampoTotal input{
+    position:relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 35px;                       /** tamanho da fonte **/
+    background-color: #DCDCDC;                 /** cor de fundo **/
+    text-align: center;
+
+}
+
+.produtoEscolhido div#inputCampoTotal input#campoTotal{  /** CAMPO INVISIVEL QUE TOTALIZA **/
+    /**display:none; **/
+    left:18px;
+    width:190px;
+    height:35px;
+    color: blue;
+}
+
+.produtoEscolhido div#inputCampoTotal input#campoTotal2{
+    left:12px;
+    width:170px;
+    height:30px;
+    color: blue;                             /** cor da fonte **/
+    pointer-events:none;
+    outline:none;
+    display:none;
+}
+
+
+
+.botao{
+
+    font: bold 18px/24px arial, helvetica, sans-aerif;
+    padding:7px;
+    text-decoration: none;
+
+    width:220px;
+    height:23px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+    position:absolute;
+
+}
+
+.produtoEscolhido div#alinhabotoes{
+    display: flex;
+    align-items: center;
+
+    padding: 70px 0px 50px 0px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+}
+
+.produtoEscolhido div#alinhabotoes button#botaoAddCarrinho{
+
+    font: bold 14px/24px arial, helvetica, sans-aerif;
+    text-decoration: none;
+    text-align:right;
+    background: yellow url(icons/carrinho.png)
+           no-repeat left center;
+
+    width:195px;
+    height:40px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+    float: left;
+    margin-left: 20px;
+
+}
+
+.produtoEscolhido div#alinhabotoes a#continuarComprando{
+
+    color: black;
+    float: left;
+    font-size: 17px;                       /** tamanho da fonte **/
+    /**margin-left: 250px; **/
+
+}
+
+                              /** ESTE BOTAO HE NA TELA DE ALTERAR ITENS DO CARRINHO **/
+.botaoAtualizarProduto{
+
+    font: bold 16px/24px arial, helvetica, sans-aerif;
+    padding:3px;
+    text-decoration: none;
+    text-align:right;
+    background: orange url(icons/atualizar.png)
+           no-repeat left center;
+
+    width:197px;
+    height:40px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+    float: left;
+    margin-left: 20px;
+
+}
+
+
+
+/**        TELA LATERAL DE TODOS OS PRODUTOS ESCOLHIDOS (CARRINHO)  **/
+
+
+.container_cabcalho_e_carrinho{
+    /** pra margin AUTO funcionar, tem que definir o height e width **/
+    height:800px ;                          /** altura do bloco **/
+    width: 370px;                            /** largura **/
+    margin-left: auto;
+    margin-top: 0px;
+
+}
+
+
+.cabecalhoItens{
+
+    /** pra margin AUTO funcionar, tem que definir o height e width **/
+    height:210px ;                          /** altura do bloco **/
+    width: 370px;                            /** largura **/
+    margin-left: auto;
+    background-color: #000000;                     /** cor de fundo **/
+    border: 1px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 0px 0px 0px 0px;  /** arredondamento da borda **/
+    /**
+    position:absolute;
+    top: 193px;
+    left:955px;
+    **/
+
+
+    font-size: 20px;                         /** tamanho da fonte **/
+    font-weight: bold;                       /** fonte em negrito **/
+    color: yellow;                           /** cor da fonte **/
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    padding: 0px 0px 0px 0px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+}
+
+.cabecalhoItens div#camposImputsTotaliza{
+    font-size: 17px;                         /** tamanho da fonte **/
+    text-align: left;
+    color: white;                           /** cor da fonte **/
+    padding: 0px 0px 0px 25px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+}
+
+.inputCabecalho{
+
+    font-size: 22px;                          /** tamanho da fonte **/
+    font-weight: bold;                     /** fonte em negrito **/
+    color: #000;                             /** cor da fonte **/
+    line-height:8px;                        /** espaço entre as linhas **/
+    padding-left:2px;                      /** espaço da borda e texto a esquerda **/
+    padding-top:0px;                       /** espaço da borda e texto a cima **/
+    width:145px;
+    height:22px;
+    text-align: center;
+    pointer-events:none;
+
+
+}
+
+.botao2{
+
+    font: bold 15px/24px arial, helvetica, sans-aerif;
+    padding:10px;
+    text-decoration: none;
+
+/** pra margin AUTO funcionar, tem que definir o height e width **/
+    width:220px;
+    height:17px;
+    margin-bottom: auto;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #A9A9A9;
+    border-radius: 6px;
+    /**position:absolute; **/
+
+}
+.botao2#finalizarCompra2{
+    top:145px;
+    left:25px;
+    text-align:center;
+    color: white;
+    background: green url(icons/carrinhop.png)
+           no-repeat left center;
+
+}
+
+
+
+
+.carrinho{
+
+    /** border: 1px outset rgba(255,255,255);    /** borda e cor da borda **/
+    /** height: 1000px ;                          /** altura do bloco **/
+    /**width: 386px;                            /** largura **/
+
+
+    /** pra margin AUTO funcionar, tem que definir o height e width **/
+    width: 370px;                            /** largura **/
+    margin-bottom: auto;
+
+
+    /**position:absolute;
+    top: 395px;
+    left:955px; **/
+
+    border: 1px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 0px 0px 5px 25px;  /** arredondamento da borda **/
+
+    /** background: url(img/carrogrande.png) center no-repeat; **/
+    background: url(img/carrogrande.png) center;
+    background-size: 150px 150px;
+    background-color: black;                     /** cor de fundo **/
+    display:inline-block;
+
+}
+
+
+
+.carrinho ul li img#foto_item_carro{
+
+    height: 50px ;                    /** altura do bloco **/
+    width: 50px;                       /** largura **/
+    margin-left: auto;
+    /**position:absolute; **/
+
+    border: 2px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 5px 10px 5px 10px;  /** arredondamento da borda **/
+
+}
+
+.carrinho ul li div#descricaoItensCarrinho{
+
+    height:43px ;                          /** altura do bloco **/
+    /**width: 316px;                            /** largura **/
+    width: 248px;                            /** largura **/
+    margin-left: auto;
+    background-color: black;                     /** cor de fundo **/
+    border: 1px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 0px 0px 0px 0px;  /** arredondamento da borda **/
+
+    font-size: 13px;                         /** tamanho da fonte **/
+    font-weight: bold;                       /** fonte em negrito **/
+    color: yellow;                           /** cor da fonte **/
+    text-decoration: none;
+    list-style: none;
+    padding: 0px 0px 0px 20px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+    line-height:2px;                    /** espaço entre as linhas **/
+    /** margin-bottom: 0px             /** margem de baixo **/
+    display:inline-block;
+
+
+}
+
+
+.carrinho ul li div#descricaoItensCarrinho h4{
+    margin-top: 13px                    /** margem de cima **/
+    /** margin-bottom: 0px             /** margem de baixo **/
+
+}
+
+.carrinho ul li div#descricaoItensCarrinho div#valoresTotais{
+    font-size: 13px;                         /** tamanho da fonte **/
+    font-weight: normal;                       /** fonte em negrito **/
+
+
+}
+
+.carrinho ul li div#descricaoItensCarrinho div#valoresTotais h4#vlUni{
+    padding-left:0px;                      /** espaço da borda e texto a esquerda **/
+    color: white;                           /** cor da fonte **/
+    display:inline;
+
+}
+
+.carrinho ul li div#descricaoItensCarrinho div#valoresTotais h4#qtd{
+    padding-left:3px;                      /** espaço da borda e texto a esquerda **/
+    color: #FF8C00;
+    display:inline;
+}
+.carrinho ul li div#descricaoItensCarrinho div#valoresTotais h4#vlTot{
+
+    padding-left:3px;                      /** espaço da borda e texto a esquerda **/
+    color: #00BFFF;                           /** cor da fonte **/
+    font-weight: bold;                       /** fonte em negrito **/
+    display:inline;
+    font-size: 14px;                         /** tamanho da fonte **/
+
+
+}
+
+
+/**        TELA DE TODOS OS PRODUTOS ESCOLHIDOS PARA MANUTENCAO (ALTERAR/DELETAR ITENS) **/
+
+.itensNoCarrinho{
+    width: 100%;
+    margin: auto;
+
+    /** border: 1px outset rgba(255,255,255);    /** borda e cor da borda **/
+    /** height: 1000px ;                          /** altura do bloco **/
+    /**width: 386px;                             /** largura **/
+
+
+    padding: 100px 0px 30px 0px;   /*  acima    50px  padding  */
+                                   /*  direita  0px  padding  */
+                                   /*  abaixo   00px padding  */
+                                   /*  esquerda 30px  padding  */
+
+    position:absolute;
+    top: 193px;
+    left:1px;
+    /**border: 4px outset #DCDCDC;        /** borda e cor da borda **/
+    /**border-radius: 0px 0px 5px 25px;  /** arredondamento da borda **/
+
+    /** background: url(img/carrogrande.png) center no-repeat; **/
+    /**background: url(img/carrogrande.png) center; **/
+    background: url(img/carrogrande.png)no-repeat;
+    background-size: 100px 95px ;
+    background-color: #F5FFFA;                     /** cor de fundo **/
+
+}
+
+.itensNoCarrinho h2.titulo_pedido{
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    color: #4F4F4F;
+    text-shadow: 0px 0px 0x #000000;
+    position: absolute;
+    left:110px;
+    top:25px
+
+}
+
+.itensNoCarrinho img#fotoCarrinhoVazio{
+    position: absolute;
+    height: 96px ;                    /** altura do bloco **/
+    width: 100px;                       /** largura **/
+    left: 0px;
+    top: 0px;
+
+
+}
+
+.fotoItensDoCarrinho{
+
+    height: 115px ;                    /** altura do bloco **/
+    width: 115px;                       /** largura **/
+    position:absolute;
+    left:3px;
+    border: 3px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 5px 1px 5px 1px;    /** arredondamento da borda **/
+
+
+}
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho{
+
+    height:130px ;                          /** altura do bloco **/
+    /**width: 316px;                            /** largura **/
+    /**width: 230px;                            /** largura **/
+    /** background-color: black;                     /** cor de fundo **/
+    border: 2px outset #DCDCDC;             /** borda e cor da borda **/
+    /**border-radius: 0px 0px 0px 0px;      /** arredondamento da borda **/
+
+    font-size: 16px;                         /** tamanho da fonte **/
+    font-weight: bold;                       /** fonte em negrito **/
+    color: black;                            /** cor da fonte **/
+    text-decoration: none;
+    list-style: none;
+    padding: 0px 0px 0px 150px;   /*  acima    50px  padding  */
+                                  /*  direita  0px  padding  */
+                                  /*  abaixo   00px padding  */
+                                  /*  esquerda 30px  padding  */
+    line-height:3px;                    /** espaço entre as linhas **/
+    /** margin-bottom: 0px              /** margem de baixo **/
+
+}
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho div input{
+    position:relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 15px;                       /** tamanho da fonte **/
+    background-color: #DCDCDC;                 /** cor de fundo **/
+    color: #000;                             /** cor da fonte **/
+    text-align: center;
+
+    width:180px;
+
+}
+
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho div input#valorUnitarioDoCarrinho2 {
+    left:39px;
+
+    height:20px;
+
+    pointer-events:none;
+    outline:none;
+}
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho div input#qtProdutoDoCarrinho {
+    left:79px;
+
+    height:25px;
+    pointer-events:none;
+    outline:none;
+
+
+}
+
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho div input#valorTotalDoCarrinho2{
+    left:61px;
+
+    height:20px;
+    font-size: 17px;                       /** tamanho da fonte **/
+
+    pointer-events:none;
+    outline:none;
+}
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho button{
+    font: bold 15px/24px arial, helvetica, sans-aerif;
+    padding:3px;
+    text-decoration: none;
+    text-align:right;
+    width:180px;
+    height:40px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 5px;
+    position:absolute;
+
+}
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho button#botaoAtualizarCarrinho{
+
+
+    color: white;
+    background: #FFA500 url(icons/atualizar.png)
+           no-repeat left center;
+
+    left:550px;
+
+
+}
+
+.itensNoCarrinho li div#descricaoItensDoCarrinho button#botaoRetirarItemCarrinho{
+
+    color: white;
+    background: #FF0000 url(icons/carrinho_ex.png)
+           no-repeat left center;
+
+    left:750px;
+
+}
+
+.itensNoCarrinho a.continuarComprandoNoCarrinho{
+    position:absolute;
+    top:16px;
+    left:630px;
+    color: black;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 20px;                       /** tamanho da fonte **/
+
+}
+
+.formRetiraItemCarrinho div#labelRetirarItemDoCarrinho{
+    position:absolute;
+    top:340px;
+    left:365px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    height: 59px ;                    /** altura do bloco **/
+    width: 540px;                       /** largura **/
+    padding: 5px 0px 5px 10px;   /*  acima    50px  padding  */
+                                  /*  direita  0px  padding  */
+                                  /*  abaixo   00px padding  */
+                                  /*  esquerda 30px  padding  */
+
+}
+
+.botaoDeletaItemCarrinho{
+
+    font: bold 16px/24px arial, helvetica, sans-aerif;
+    color: white;
+    padding:1px;
+    text-decoration: none;
+    text-align:center;
+    background: red url(icons/lixeira2.png)
+           no-repeat left center;
+
+    width:110px;
+    height:45px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+    position:absolute;
+    top: 355px;
+    left:673px;
+}
+
+.botaoCancelaDeletaItemCarrinho{
+
+    font: bold 16px/24px arial, helvetica, sans-aerif;
+    padding:3px;
+    color: white;
+    text-decoration: none;
+    text-align:right;
+    background: orange url(icons/cancel.png)
+           no-repeat left center;
+
+    width:110px;
+    height:45px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+    position:absolute;
+    top: 555px;
+    left:810px;
+}
+
+
+
+
+/** -----------------  TELA DE TODOS OS PEDIDOS DO CLIENTE --------------- **/
+
+.telaDePedidos{
+    width: 100%;
+    margin: auto;
+
+    /** border: 1px outset rgba(255,255,255);    /** borda e cor da borda **/
+    /** height: 1000px ;                          /** altura do bloco **/
+    /**width: 386px;                             /** largura **/
+
+
+    padding: 100px 0px 30px 0px;   /*  acima    50px  padding  */
+                                   /*  direita  0px  padding  */
+                                   /*  abaixo   00px padding  */
+                                   /*  esquerda 30px  padding  */
+
+    position:absolute;
+    top: 193px;
+    left:1px;
+    /**border: 4px outset #DCDCDC;        /** borda e cor da borda **/
+    /**border-radius: 0px 0px 5px 25px;  /** arredondamento da borda **/
+
+    /** background: url(img/carrogrande.png) center no-repeat; **/
+    /**background: url(img/carrogrande.png) center; **/
+    background-size: 100px 95px ;
+    background-color: #F5FFFA;                     /** cor de fundo **/
+
+
+}
+
+.telaDePedidos a.continuarComprandoTelaPedidos{
+    position:absolute;
+    top:16px;
+    left:630px;
+    color: black;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 20px;                       /** tamanho da fonte **/
+
+}
+
+.telaDePedidos img#fotoLista{
+    position: absolute;
+    height: 100px ;                    /** altura do bloco **/
+    width: 100px;                       /** largura **/
+    left: 10px;
+    top: 10px;
+
+}
+
+.telaDePedidos h2.titulo_pedido{
+    font-family: Arial, sans-serif;
+    font-size: 33px;
+    color: #4F4F4F;
+    text-shadow: 0px 0px 0x #000000;
+    position: absolute;
+    left:120px;
+    top:20px
+
+}
+
+.telaDePedidos ul#descricaoPedidos{
+    padding: 0px 0px 0px 10px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+
+
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido{
+
+    line-height:0px;           /** espaço entre as linhas **/
+    font-size: 20px;
+    border: 4px outset #DCDCDC;             /** borda e cor da borda **/
+
+    padding: 12px 0px 15px 0px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li{
+
+    height:12px ;                          /** altura do bloco **/
+    padding: 20px 0px 0px 30px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+    text-decoration: none;
+    list-style: none;
+
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#idPed{
+    color: red;                           /** cor da fonte **/
+    font-size: 25px;
+
+    padding: 20px 0px 10px 30px; /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#idPed div{
+    color: white;                           /** cor da fonte **/
+    font-size: 27px;
+
+    padding: 5px 75px 5px 75px; /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+    display: inline;
+    border: 2px solid #DCDCDC;             /** borda e cor da borda **/
+    border-radius: 5px;
+    background-color: blue;                 /** cor de fundo **/
+
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#dtPed div{
+
+    color: blue;                           /** cor da fonte **/
+    font-size: 22px;
+
+    padding: 5px 0px 5px 65px; /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+    display: inline;
+
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#sitPed h3{
+
+    color: blue;                           /** cor da fonte **/
+    font-size: 22px;
+
+    padding: 5px 0px 5px 30px; /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+    display: inline;
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#sitPed h3#aberto{
+
+    color: #FFA500;                           /** cor da fonte **/
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#sitPed h3#concluido{
+
+    color: blue;                           /** cor da fonte **/
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#sitPed h3#cancelado{
+
+    color: red;                           /** cor da fonte **/
+
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido li#vlPed div{
+
+    color: blue;                           /** cor da fonte **/
+    font-size: 22px;
+
+    padding: 5px 0px 5px 30px; /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+    display: inline;
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido a#verItensPedido{
+
+    color: blue;                           /** cor da fonte **/
+    font-size: 21px;
+
+    padding: 15px 0px 0px 0px; /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+    display: inline;
+
+    left:490px;
+
+    position:absolute;
+}
+
+.telaDePedidos ul#descricaoPedidos div#infoPedido button#botaoCancPedido{
+
+    font: bold 16px arial, helvetica, sans-aerif;
+    text-decoration: none;
+    text-align:right;
+    color: white;                           /** cor da fonte **/
+    background: red url(icons/cancelar.png)
+           no-repeat left center;
+
+    width:185px;
+    height:40px;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+    display: inline;
+
+    left:735px;
+
+    position:absolute;
+
+}
+
+
+/**        TELA DOS ITENS DOS PEDIDOS  **/
+
+.itensNoPedido{
+    width: 100%;
+    margin: auto;
+
+    /** border: 5px solid rgba(255,255,255);    /** borda e cor da borda **/
+
+
+
+    padding: 22px 0px 10px 0px;   /*  acima    50px  padding  */
+                                   /*  direita  0px  padding  */
+                                   /*  abaixo   00px padding  */
+                                   /*  esquerda 30px  padding  */
+
+    position:absolute;
+    top: 190px;
+    left:0px;
+
+    background-color: white;                     /** cor de fundo **/
+
+
+}
+
+.itensNoPedido img#fotoCabecalhoItemPedido{
+    position: absolute;
+    height: 80px ;                    /** altura do bloco **/
+    width: 80px;                       /** largura **/
+    left: 10px;
+    top: 10px;
+
+}
+
+.itensNoPedido h1{
+    font-size: 30px;                         /** tamanho da fonte **/
+    font-weight: bold;                       /** fonte em negrito **/
+    color: #696969;                            /** cor da fonte **/
+    text-decoration: none;
+    list-style: none;
+    padding: 0px 0px 0px 120px;   /*  acima    50px  padding  */
+                                  /*  direita  0px  padding  */
+                                  /*  abaixo   00px padding  */
+                                  /*  esquerda 30px  padding  */
+
+}
+
+.itensNoPedido h2{
+    color: white;                           /** cor da fonte **/
+    font-size: 27px;
+
+    padding: 5px 75px 5px 75px; /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+    display: inline;
+    position:absolute;
+    top: 10px;
+    left:360px;
+    border: 2px solid #DCDCDC;             /** borda e cor da borda **/
+    border-radius: 5px;
+    background-color: blue;                 /** cor de fundo **/
+
+}
+
+.itensNoPedido a#voltarAListaPedido{
+    color: blue;                           /** cor da fonte **/
+    font-size: 22px;
+
+
+    display: inline;
+    position:absolute;
+    top: 35px;
+    left: 600px;
+
+}
+
+
+.fotoItensDoPedido{
+
+    height: 115px ;                    /** altura do bloco **/
+    width: 115px;                       /** largura **/
+    position:absolute;
+    left:3px;
+    border: 3px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 5px 1px 5px 1px;    /** arredondamento da borda **/
+
+
+}
+
+.itensNoPedido li div#descricaoDoItemPedido{
+
+    height:130px ;                          /** altura do bloco **/
+    /**width: 316px;                            /** largura **/
+    /**width: 230px;                            /** largura **/
+    /** background-color: black;                     /** cor de fundo **/
+    border: 2px outset #DCDCDC;             /** borda e cor da borda **/
+    /**border-radius: 0px 0px 0px 0px;      /** arredondamento da borda **/
+
+    font-size: 16px;                         /** tamanho da fonte **/
+    font-weight: bold;                       /** fonte em negrito **/
+    color: black;                            /** cor da fonte **/
+    text-decoration: none;
+    list-style: none;
+    padding: 0px 0px 0px 150px;   /*  acima    50px  padding  */
+                                  /*  direita  0px  padding  */
+                                  /*  abaixo   00px padding  */
+                                  /*  esquerda 30px  padding  */
+    line-height:3px;                    /** espaço entre as linhas **/
+    /** margin-bottom: 0px              /** margem de baixo **/
+
+}
+
+.itensNoPedido li div#descricaoDoItemPedido div input{
+    position:relative;
+    font-weight: bold;                     /** fonte em negrito **/
+    font-size: 15px;                       /** tamanho da fonte **/
+    background-color: #DCDCDC;                 /** cor de fundo **/
+    color: #000;                             /** cor da fonte **/
+    text-align: center;
+
+    width:180px;
+
+}
+
+
+.itensNoPedido li div#descricaoDoItemPedido div input#valorUnitarioDoItemPedido2 {
+    left:39px;
+
+    height:20px;
+
+    pointer-events:none;
+    outline:none;
+}
+
+.itensNoPedido li div#descricaoDoItemPedido div input#qtProdutoDoItemPedido {
+    left:79px;
+
+    height:25px;
+    pointer-events:none;
+    outline:none;
+
+
+}
+
+
+.itensNoPedido li div#descricaoDoItemPedido div input#valorTotalDoItemPedido2{
+    left:61px;
+
+    height:20px;
+    font-size: 17px;                       /** tamanho da fonte **/
+
+    pointer-events:none;
+    outline:none;
+}
+
+
+.itensNoPedido li div#descricaoDoItemPedido button{
+    font: bold 15px/24px arial, helvetica, sans-aerif;
+    padding:3px;
+    text-decoration: none;
+    text-align:right;
+    width:180px;
+    height:40px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 5px;
+    position:absolute;
+
+}
+
+
+
+
+
+
+
+/** -------CONFIGURAÇÕES DA IMAGEM E DIVULGAÇÂO DOS PRODUTOS NO SITE **/
+
+
+.imagemProduto{
+
+    height: 250px ;                    /** altura do bloco **/
+    width: 260px;                       /** largura **/
+    border: 2px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 15px 15px 0px 0px;  /** arredondamento da borda **/
+
+
+}
+
+.corDeFundoPreco{
+    background-color: rgba(255,255,255);         /** cor de fundo **/
+    height: 110px ;                    /** altura do bloco **/
+    width: 260px;                      /** largura **/
+    border: 2px outset #DCDCDC;        /** borda e cor da borda **/
+    border-radius: 0px 0px 15px 15px;  /** arredondamento da borda **/
+
+}
+
+#pedBebidas{
+
+    /** pra margin AUTO funcionar, tem que definir o height e width **/
+    height: 100%px ;                          /** altura do bloco **/
+    width: 70%;                              /** largura **/
+    margin-right: auto;
+
+    /** font-family: Impact, fantasy; **/
+    font-size: 15px;                          /** tamanho da fonte **/
+    /** font-weight: bold;                        /** fonte em negrito **/
+    color: #000 ;                              /** cor da fonte **/
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+
+
+
+}
+
+#pedBebidas ul li#fonte1{
+    font-size: 22px;                          /** tamanho da fonte **/
+    /** font-weight: bold;                        /** fonte em negrito **/
+    color: #000;                              /** cor da fonte **/
+    text-align: center;
+}
+
+#pedBebidas ul li#fonte2{
+    padding-left:10px;                       /** espaço da borda e texto a esquerda **/
+
+}
+
+#pedBebidas ul li#fonte3{
+    line-height:15px;                          /** espaço entre as linhas **/
+    padding-left:10px;                       /** espaço da borda e texto a esquerda **/
+}
+
+#pedBebidas ul li#fonte4{
+    font-size: 25px;                          /** tamanho da fonte **/
+    /**font-weight: bold;                        /** fonte em negrito **/
+    color: #000;                              /** cor da fonte **/
+    line-height:30px;                          /** espaço entre as linhas **/
+    padding-left:10px;                       /** espaço da borda e texto a esquerda **/
+}
+
+.ladoALado{
+    float: left;
+    padding: 70px 0px 0px 20px;   /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+}
+
+
+
+.botaoComprar{
+
+    font: bold 18px/24px arial, helvetica, sans-aerif;
+    padding:6px;
+    text-decoration: none;
+    text-align:right;
+    color: black;
+    background: #FFA500 url(icons/cesta3.png)
+           no-repeat left center;
+    width:105px;
+    height:27px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+
+}
+
+
+
+/** --------------------- CADASTRO DE USUARIOS ------------------------**/
+
+.CadUsuarioForm{
+
+    /** border: 1px outset rgba(255,255,255);    /** borda e cor da borda **/
+
+    height: 450px ;                             /** altura do bloco **/
+    width: 100%;                                /** largura **/
+
+    font-size: 18px;                          /** tamanho da fonte **/
+    font-weight: bold;                        /** fonte em negrito **/
+    color: black;                            /** cor da fonte **/
+    text-decoration: none;
+    text-decoration: none;
+    list-style: none;
+
+    padding: 0px 0px 0px 30px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+
+    position:absolute;
+    top: 193px;
+    left:0px;
+
+    /** background: url(img/carrogrande.png) center no-repeat; **/
+    /** background: url(img/carrogrande.png) center; **/
+    background-size: 150px 150px;
+    background-color: #C0C0C0;                     /** cor de fundo **/
+    border-radius: 0px 0px 0px 0px ;         /** arredondamento da borda **/
+
+}
+
+.CadUsuarioForm h2#cabecalhoCadCli{
+    font-family: Arial, sans-serif;
+    font-size: 33px;
+    color: rgba(255,255,255);
+    text-shadow: 2px 2px 2px rgba(0,0,0,.6);
+    text-align: left;
+}
+
+.container_Usuario{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+    line-height:40px;                          /** espaço entre as linhas **/
+
+
+}
+
+.container_Usuario div input{
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    background-color: #fffccc;
+    box-shadow: 1px 1px 2px #333333;
+    height: 25px;                            /** altuta **/
+    text-transform: uppercase;
+}
+
+.container_Usuario div#email_{
+    padding-left:90px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container_Usuario div input#email{
+    width:600px   ;                 /* tamanho do campo */
+    text-transform: none;
+}
+
+.container_Usuario div#senha_{
+    padding-left:84px;                      /** espaço da borda e texto a esquerda **/
+    text-transform: none;
+}
+.container_Usuario div input#senha{
+    width:200px   ;                 /* tamanho do campo */
+    text-transform: none;
+}
+
+.container_Usuario div#confsenha_{
+    padding-left:0px;                      /** espaço da borda e texto a esquerda **/
+}
+.container_Usuario div input#confsenha{
+    width:200px   ;                 /* tamanho do campo */
+    text-transform: none;
+}
+.container_Usuario div#primeiro_nome_{
+    padding-left:12px;                      /** espaço da borda e texto a esquerda **/
+}
+.container_Usuario div input#primeiro_nome{
+    width:300px  ;                  /* tamanho do campo */
+}
+.container_Usuario div#sobre_nome_{
+    padding-left:34px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container_Usuario div input#sobre_nome{
+    width:300px  ;                  /* tamanho do campo */
+}
+
+.CadUsuarioForm button {
+
+    padding:8px;
+    text-decoration: none;
+    text-align:center;
+    width:135px;
+    height:40px;
+    display:inline-block;
+    border-radius: 3px;
+    position:absolute;
+    right: 600px;
+    bottom:100px;
+    box-shadow: 1px 1px 0 1px #363636;
+
+
+}
+
+.CadUsuarioForm button#cadastrar {
+    color: white;
+    background-color: #1E90FF;                  /** cor de fundo **/
+    font: bold 16px/24px arial, helvetica, sans-aerif;
+    text-shadow: 2px 2px 2px black;
+
+}
+
+.CadUsuarioForm button#alterar {
+    color: white;
+    background-color: #FFD700;                     /** cor de fundo **/
+    font: bold 16px/24px arial, helvetica, sans-aerif;
+    text-shadow: 2px 2px 2px black;
+
+
+}
+
+.CadUsuarioForm a#ir-cadastro-cliente {
+
+    position:absolute;
+    right: 200px;
+    bottom: 100px;
+
+
+    color: blue;
+    font: bold 21px/25px arial, helvetica, sans-aerif;
+    text-shadow: 2px 2px 2px white;
+
+}
+
+
+/**----------------- localização do cliente --------------------**/
+
+.LocalizacaoCli{
+
+    height: 49px ;                          /** altura do bloco **/
+    width: 100%px;
+    margin: auto;
+
+    list-style: none;
+
+    font-size: 20px;                          /** tamanho da fonte **/
+    font-weight: bold;                        /** fonte em negrito **/
+    color: black;                            /** cor da fonte **/
+
+
+    padding: 10px 0px 0px 20px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+    background-color: #C0C0C0;                     /** cor de fundo **/
+    border: 3px solid rgba(255,255,255);    /** borda e cor da borda **/
+    border-radius: 0px 0px 0px 0px ;         /** arredondamento da borda **/
+
+}
+
+.botaoLocalizacao{
+
+    font: bold 15px/24px arial, helvetica, sans-aerif;
+    color: white;
+    padding:3px;
+    text-decoration: none;
+    text-align:right;
+    background: green url(icons/local.png)
+           no-repeat left center;
+
+    width:197px;
+    height:40px;
+    display:inline-block;
+    box-shadow: 2px 2px 0 1px #363636;
+    border-radius: 3px;
+
+
+}
+
+
+
+/** --------------------- CADASTRO DE CLIENTES ------------------------**/
+
+.CadClienteForm{
+
+    /** border: 1px outset rgba(255,255,255);    /** borda e cor da borda **/
+
+    height: 100%px ;                             /** altura do bloco **/
+    width: 100%;                                /** largura **/
+
+    font-size: 18px;                          /** tamanho da fonte **/
+    font-weight: bold;                        /** fonte em negrito **/
+    color: black;                            /** cor da fonte **/
+    text-decoration: none;
+    text-decoration: none;
+    list-style: none;
+
+    padding: 0px 0px 0px 0px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+    position:absolute;
+    box-shadow: 1px 1px 0 1px #363636;
+    top: 260px;
+    left:0px;
+
+
+
+
+    /** background: url(img/carrogrande.png) center no-repeat; **/
+    /** background: url(img/carrogrande.png) center; **/
+
+    background-color: #C0C0C0;                     /** cor de fundo **/
+
+
+}
+
+.CadClienteForm h3#cabecalho1CadCli{
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    color: rgba(255,255,255);
+    text-shadow: 2px 2px 2px rgba(0,0,0,.6);
+    text-align: left;
+    padding: 0px 0px 0px 10px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+}
+
+.CadClienteForm h2#cabecalhoCadCli{
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    color: rgba(255,255,255);
+    text-shadow: 2px 2px 2px rgba(0,0,0,.6);
+    text-align: left;
+    padding: 0px 0px 0px 10px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+}
+
+.container{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+    line-height:40px;                          /** espaço entre as linhas **/
+
+}
+
+.container div input{
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    background-color: #fffccc;
+    box-shadow: 1px 1px 2px #333333;
+    height: 25px;                            /** altuta **/
+    text-transform: uppercase;
+}
+
+
+
+.container div#cpf_{
+    padding: 5px 0px 0px 102px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+}
+.container div input#cpf{
+    width:150px   ;                 /* tamanho do campo */
+}
+
+.container div#endereco_{
+    padding-left:56px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#endereco{
+    width:600px   ;                 /* tamanho do campo */
+}
+
+.container div#numero_{
+    padding-left:70px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#numero{
+    width:100px   ;                 /* tamanho do campo */
+}
+
+.container div#cep_{
+    padding-left:101px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#cep{
+    width:100px   ;                 /* tamanho do campo */
+}
+
+.container div#complemento_{
+    padding-left:0px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#complemento{
+    width:510px   ;                 /* tamanho do campo */
+}
+
+.container div#bairro_{
+    padding-left:86px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#bairro{
+    width:450px   ;                 /* tamanho do campo */
+}
+
+.container div#cidade_{
+    padding-left:79px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#cidade{
+    width:450px   ;                 /* tamanho do campo */
+}
+
+.container div#estado_{
+    padding-left:80px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#estado{
+    width:450px   ;                 /* tamanho do campo */
+}
+
+.container div#telcelular_{
+    padding-left:1px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#telcelular{
+    width:200px   ;                 /* tamanho do campo */
+}
+
+.container div#telfixo_{
+    padding-left:25px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#telfixo{
+    width:200px   ;                 /* tamanho do campo */
+}
+
+
+
+
+
+/** ENDEREÇO DE ENTREGA **/
+
+.container div#endEntrega_{
+    padding-left:65px;                      /** espaço da borda e texto a esquerda **/
+    padding: 20px 0px 0px 80px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                               /*  esquerda 30px  padding  */
+}
+
+.container div#endEntrega_ label#labelEntrega{
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    color: rgba(255,255,255);
+    text-shadow: 2px 2px 2px rgba(0,0,0,.6);
+    text-align: left;
+
+
+}
+
+
+.container div#endEntrega_ div#checkbox input{
+    min-width: 10px;
+    min-height: 10px;
+    margin-right: 10px;
+
+    transform: scale(2);
+
+    width: 14px;
+    height: 14px;
+
+
+
+}
+
+
+.container div#enderecoEnt_{
+    padding-left:56px;                      /** espaço da borda e texto a esquerda **/
+    padding: 20px 0px 0px 56px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                               /*  esquerda 30px  padding  */
+}
+.container div input#enderecoEnt{
+    width:600px   ;                 /* tamanho do campo */
+}
+
+.container div#numeroEnt_{
+    padding-left:70px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#numeroEnt{
+    width:100px   ;                 /* tamanho do campo */
+}
+
+.container div#cepEnt_{
+    padding-left:101px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#cepEnt{
+    width:100px   ;                 /* tamanho do campo */
+}
+
+.container div#complementoEnt_{
+    padding-left:0px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#complementoEnt{
+    width:510px   ;                 /* tamanho do campo */
+}
+
+.container div#bairroEnt_{
+    padding-left:86px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#bairroEnt{
+    width:450px   ;                 /* tamanho do campo */
+}
+
+.container div#cidadeEnt_{
+    padding-left:79px;                      /** espaço da borda e texto a esquerda **/
+
+}
+.container div input#cidadeEnt{
+    width:450px   ;                 /* tamanho do campo */
+}
+
+.container div#estadoEnt_{
+    padding-left:80px;                      /** espaço da borda e texto a esquerda **/
+    padding: 0px 0px 100px 80px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                               /*  esquerda 30px  padding  */
+
+}
+.container div input#estadoEnt{
+    width:450px   ;                 /* tamanho do campo */
+}
+
+
+
+.CadClienteForm button {
+
+    padding:8px;
+    text-decoration: none;
+    text-align:center;
+    width:135px;
+    height:40px;
+    border-radius: 3px;
+    position:absolute;
+    bottom: 40px;
+    right: 300px;
+    box-shadow: 1px 1px 0 1px #363636;
+
+   
+
+}
+
+.CadClienteForm button#cadastrar {
+    color: white;
+    background-color: #1E90FF;                  /** cor de fundo **/
+    font: bold 16px/24px arial, helvetica, sans-aerif;
+    text-shadow: 2px 2px 2px black;
+
+}
+
+.CadClienteForm button#alterar {
+    color: white;
+    background-color: #FFD700;                     /** cor de fundo **/
+    font: bold 16px/24px arial, helvetica, sans-aerif;
+    text-shadow: 2px 2px 2px black;
+
+
+}
+
+/** ------------------------------------------------ **/
+
+.special{
+    left:62px;
+    width:170px;
+    height:30px;
+    color: blue;                             /** cor da fonte **/
+
+}
+
+
+footer{
+
+    font-size: 15px;                 /** tamanho da fonte **/
+    font-weight: bold;               /** fonte em negrito **/
+    color: #000;                     /** cor da fonte **/
+    justify-content: center;
+
+     /** fixar no Rodape **/
+
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    margin-bottom: -14px;            /** altura da margem no rodape **/
+
+}
+
+
+.messages{
+
+    color: white;                           /** cor da fonte **/
+    font-size: 20px;
+    list-style: none;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px white;
+
+    border: 3px solid white;
+    border-radius: 15px;
+    background-color: #0000CD;                 /** cor de fundo **/
+    position: fixed;
+    right: 0;
+
+    height:80px ;                          /** altura do bloco **/
+    width: 400px;                            /** largura **/
+    margin-left: auto;
+
+    text-align: center;
+    bottom: 0;
+    margin-bottom: 10px;            /** altura da margem no rodape **/
+
+    height:50px;
+    padding: 20px 0px 10px 0px;  /*  acima    50px  padding  */
+                                /*  direita  0px  padding  */
+                                /*  abaixo   00px padding  */
+                                /*  esquerda 30px  padding  */
+
+}
+
+.messages li img{
+
+    position: absolute;
+    top: 15px;
+    right: : 0px;
+
+
+}
+
+
+

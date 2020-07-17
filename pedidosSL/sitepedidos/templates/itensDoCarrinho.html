@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% load static %}
+
+    <!--
+      OBS, para calculos no JS é utilizado as campos das seguntes tags
+        tag CLASS  vai os campos para somar, multplica e etc..
+        tag ID vira os resultados
+    -->
+
+
+    <div class = "itensNoCarrinho">
+        {% if lista_carrinhoL %}
+            <h2 class="titulo_pedido"> Retire itens ou altere a quantidade</h2>
+            <a  class="continuarComprandoNoCarrinho"
+                href = "{% url 'pedBebidas'%} "> << CONTINUAR COMPRANDO >> </a>
+            <img id = "fotoCarrinhoVazio"
+                 src= {% static 'css/icons/carrograndeC.png' %} />
+
+        {% else %}
+
+            <h2 class="titulo_pedido"> Seu carrinho está vazio!</h2>
+            <h2> </h2> <br>
+            <h2> </h2> <br>
+            <a  class="continuarComprandoNoCarrinho"
+                href = "{% url 'inicio'%} "><< IR AS COMPRAS  >> </a>
+
+        {% endif %}
+
+        {%for ITENSNOCARRINHO in lista_carrinhoL%}
+
+
+            <li>
+                {% if ITENSNOCARRINHO.produto.foto %}
+                    <img class = "fotoItensDoCarrinho"
+                     src =" {{ITENSNOCARRINHO.produto.foto.url}} " />
+                {% else %}
+                    <img class = "fotoItensDoCarrinho"
+                     src =" {{ITENSNOCARRINHO.produto.url_imagem}} " />
+
+                {% endif %}
+
+                <div id="descricaoItensDoCarrinho">
+                    <h3>
+                        {{ITENSNOCARRINHO.produto}} -
+                        {{ITENSNOCARRINHO.produto.complemento}}
+                    </h3>
+
+                    <a href = "{% url 'alteraItensDoCarrinho' ITENSNOCARRINHO.id%} ">
+                        <button type="submit"
+                                class="botaoAtualizarCarrinho"
+                                id = "botaoAtualizarCarrinho">
+                                Alterar quantidade
+                        </button>
+                    </a>
+
+                    <a class=""
+                       href ="{% url 'confirmaRetirarItemCarrinho' ITENSNOCARRINHO.id %}"
+                       title="">
+
+                        <button type="submit"
+                            class="botaoRetirarItemCarrinho"
+                            id = "botaoRetirarItemCarrinho"
+                            href = "{% url 'confirmaRetirarItemCarrinho' ITENSNOCARRINHO.id %}">
+                            Tirar do carrinho
+                        </button>
+
+                    </a>
+
+
+
+                    <!-- CAMPO VALOR UNITARIO -->
+                    <div id =inputValorUnitarioDoCarrinho>
+                            <label> Valor unitario R$  </label>
+                            <input id="valorUnitarioDoCarrinho2"
+                                    class ="valorUnitarioDoCarrinho"
+                                    type="text"
+                                    value = "{{ ITENSNOCARRINHO.valor_unitario }}" >
+
+                    </div>
+
+                    <!-- CAMPO QUANTIDADE  -->
+                    <div id =inputQtProdutoDoCarrinho>
+                            <label> Quantidade  </label>
+                            <input id="qtProdutoDoCarrinho"
+                                    class ="qtProdutoDoCarrinho"
+                                    name="qtProdutoDoCarrinho"
+                                    type="text"
+                                    value = "{{ ITENSNOCARRINHO.quantidade|floatformat:0 }}" >
+                    </div>
+
+
+
+                    <!-- CAMPO VALOR TOTAL  -->
+
+                    <div id =inputValorTotalDoCarrinho>
+                        <label> Valor Total R$  </label>
+                        <input id="valorTotalDoCarrinho2"
+                               class ="valorTotalDoCarrinho"
+                               type="text"
+                               resultado = "readonly"
+                               step="0.01"
+                               value = "{{ ITENSNOCARRINHO.valor_total_item }}" >
+                    </div>
+
+                </div>
+            </li>
+
+        {%endfor%}
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,75 @@
+PARA QUE A IMAGEM DOS PRODUTOS COM ENDEREÇOS GRAVADOS NO BD POSSAM
+APARECER NOS TEMPLATES, FAÇAM AS SEGUINTE CONFIGURAÕES:
+
+OBS - TUDO NA PASTA DO PROJETO PRINCIPAL, E NAO NO APP
+
+1 - No Settings.py, va para o final do arquivo e coloque as seguintes configurações:
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+2 -  Na Urls.py, assim que fechar o "urlpatterns" coloque o comando abaixo:
+
++ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+Exemplo:
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+    OBS: Nao esquecer de importar as dependencias:
+    from django.conf import settings
+    from django.conf.urls.static import static
+
+
+3 - No models.py, no campo definido para gravar a imagem, no "upload_to" coloque o seguinte caminho:
+
+upload_to='media/images/produtos'
+
+
+4 - ao definir acesso LOGIN faça as configurações das paginas que será acessada depois
+    do LOGIN e LOGOUT. Isso no SETTINGS.PY, veja abaixo:
+
+    LOGIN_URL = 'inicio'
+    LOGIN_REDIRECT_URL = 'inicio'
+    LOGOUT_REDIRECT_URL = 'inicio'
+
+5 - usa o switalert no django
+
+    pip install --upgrade sweetify
+
+    - no setings.py:
+
+        INSTALLED_APPS = [
+         ...
+            'sweetify'
+        ]
+
+
+        SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+
+    - No template:
+
+        {% load sweetify %}
+        {% sweetify %}
+
+        </body>
+        </html>
+
+    - Tipos de alertas:
+    sweetify.info(self.request, 'Message sent', button='Ok', timer=3000)
+    sweetify.success(self.request, 'You successfully changed your password')
+    sweetify.error(self.request, 'Some error happened here - reload the site', persistent=':(')
+    sweetify.warning(self.request, 'This is a warning... I guess')
+
+
+
+
+https://site-de-pedidos.herokuapp.com/ | https://git.heroku.com/site-de-pedidos.git
+
+

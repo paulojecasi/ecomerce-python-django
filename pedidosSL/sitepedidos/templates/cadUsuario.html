@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+    <form class="CadUsuarioForm"
+          action="{% url 'gravaAlteraUsuarioNovo' %}"
+          name = "CadUsuarioForm"
+          method="POST">
+        {% csrf_token %}
+
+        <h2 id="cabecalhoCadCli"> Cadastro de usuário e senha</h2>
+        <!--
+        {{ form_CadCliente.as_p }}
+        -->
+
+        <div class="container_Usuario">
+            <div id = "email_">
+                <label> Email </label>
+                <input id="email"
+                    class="email"
+                    name ="email"
+                    type ="email"
+                    {% if user.is_authenticated %}
+                        value= "{{user.email}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                 >
+            </div>
+
+            <div id = "senha_">
+                <label> Senha </label>
+                <input id="senha"
+                    class="senha"
+                    name ="senha"
+                    type ="password"
+                    {% if user.is_authenticated %}
+                        value= "{{user.password}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                 >
+            </div>
+
+            <div id = "confsenha_">
+                <label> Confirme Senha </label>
+                <input id="confsenha"
+                    class="confsenha"
+                    name ="confsenha"
+                    type ="password"
+                    {% if user.is_authenticated %}
+                        value= "{{user.password}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                 >
+            </div>
+
+            <div id = "primeiro_nome_">
+                <label> Primeiro nome </label>
+                <input id="primeiro_nome"
+                    class="primeiro_nome"
+                    name ="primeiro_nome"
+                    type ="text"
+                    {% if user.is_authenticated %}
+                        value= "{{user.first_name}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                 >
+            </div>
+            <div id = "sobre_nome_">
+                <label> Sobre nome </label>
+                <input id="sobre_nome"
+                    class="sobre_nome"
+                    name ="sobre_nome"
+                    type ="text"
+                    {% if user.is_authenticated %}
+                        value= "{{user.last_name}}"
+                    {% else %}
+                        value= ""
+                    {% endif %}
+                 >
+            </div>
+
+
+        </div>
+
+        {% if user.is_authenticated %}
+            <button id="alterar"
+                    type="submit"
+                    onclick="validaEmail()"
+            > ATUALIZAR </button>
+            <a  id="ir-cadastro-cliente"
+                href = "{% url 'telaCadastroClientes' user.id%} ">
+                << Meus dados complementares >>
+            </a>
+        {% else %}
+            <button id="cadastrar"
+                    type="submit"
+                    onclick="validaEmail()"
+
+            > CADASTRAR </button>
+        {% endif %}
+
+    </form>
+
+{% endblock %}
+

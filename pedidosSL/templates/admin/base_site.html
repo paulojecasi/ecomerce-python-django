@@ -1,0 +1,21 @@
+
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'GRUPO SL - ADMINISTRAÇÃO' %}{% endblock %}
+
+{% block branding %}
+
+<p>
+    <font color="#F0E68C" size=1>
+        {% trans 'JECASI TECNOLOGIA - SOLUÇÕES EM TI' %}
+    </font>
+</p>
+
+<font size=6 color="#DCDCDC" id="site-name">
+        {% trans 'GRUPO SL - ADMINISTRAÇÃO DO SISTEMA' %}
+</font>
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

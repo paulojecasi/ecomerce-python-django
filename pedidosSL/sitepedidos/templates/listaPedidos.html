@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% load static %}
+
+
+
+    <div class="telaDePedidos">
+
+      {% if Lista_Pedidos %}
+          <h2 class="titulo_pedido"> Seus pedidos</h2>
+
+      {% else %}
+          <h2 class="titulo_pedido"> Voce não tem pedidos</h2>
+
+      {% endif %}
+      <a  class="continuarComprandoTelaPedidos"
+          href = "{% url 'pedBebidas'%} "> << IR AS COMPRAS >> </a>
+      <img id = "fotoLista"
+           src= {% static 'css/icons/bloconotas.png' %} />
+
+
+
+      {% for LISTAPEDIDOS in Lista_Pedidos %}
+        <ul id = "descricaoPedidos">
+
+
+          <div id="infoPedido">
+
+            <li id="idPed">
+                Pedido numero <div>  {{    LISTAPEDIDOS.id }} </div>
+            </li>
+
+            <a id="verItensPedido"
+              href = "{% url 'itensDoPedido' LISTAPEDIDOS.id%} "> Ver itens do seu pedido  </a>
+
+            <button type="submit"  id = "botaoCancPedido">
+              Cancelar pedido
+            </button>
+
+            <li id="dtPed">
+                Data pedido   <div> {{    LISTAPEDIDOS.dt_abertura }} </div>
+            </li>
+
+            <li id="sitPed">
+
+                Situacao  pedido
+                {% if LISTAPEDIDOS.situacao == '0' %}
+                      <h3 id="aberto"> A B E R T O  </h3>
+                {% elif LISTAPEDIDOS.situacao == '1' %}
+                      <h3 id="concluido"> C O N C L U I D O  </h3>
+                {% else %}
+                      <h3 id="cancelado"> C A N C E L A D O   </h3>
+                {% endif %}
+            </li>
+
+            <li id="vlPed">
+                Valor pedido R$  <div> {{   LISTAPEDIDOS.valor }} </div>
+            </li>
+
+
+
+
+          </div>
+
+        </ul>
+
+      {% endfor %}
+    </div>
+
+
+
+
+
+
+{% endblock %}</html>

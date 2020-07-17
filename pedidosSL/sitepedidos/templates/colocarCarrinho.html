@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% load static %}
+
+
+    <!--
+      OBS, para calculos no JS é utilizado as campos das seguntes tags
+        tag CLASS  vai os campos para somar, multplica e etc..
+        tag ID vira os resultados
+    -->
+
+  <form class="CadItemCarrinho" action="{% url 'gravaItemCarrinho'%}"
+        method="POST">
+      {% csrf_token %}
+
+    <h1 id="titulo_pedido"> Colocar no Carrinho </h1>
+
+
+
+    <div class = "produtoEscolhido">
+
+        <input id="campoId"
+               class ="IdItem"
+               name="produto"
+               type="hidden"
+               value = "{{ itemNoCarrinho.id }}" >
+
+        {% if itemNoCarrinho.foto %}
+            <img class = "imagemProdutoEscolhido"
+             src =" {{ itemNoCarrinho.foto.url }} " />
+        {% else %}
+            <img class = "imagemProdutoEscolhido"
+             src =" {{ itemNoCarrinho.url_imagem }} " />
+
+        {% endif %}
+
+
+        <div id = "formataLetra">
+            <p id = "linha1" > {{ itemNoCarrinho.bebida }} </p>
+            <p id = "linha2" > {{ itemNoCarrinho.complemento }} </p>
+            <p id = "linha3" > {{ itemNoCarrinho.tamanho }} </p>
+
+          <div id =inputValorUnitario>
+            <label> R$  </label>
+            <input id="campoValorUnitario"
+                   class ="valorItem"
+                   name="valor_unitario"
+                   type="number"
+                   step="0.01"
+                   value = "{{ itemNoCarrinho.valor }}" >
+
+            <!--
+            <input id="campoValorUnitario2"
+                   class ="valorItem"
+                   type="text"
+                   value = "{{ itemNoCarrinho.valor }}" >
+                   -->
+          </div>
+
+
+          <div id =inputQuantidade>
+
+
+
+            <label>Quantidade  </label>
+            <input id="campoQuantidade"
+                   class="quantidadeItens"
+                   name="quantidade"
+                   type="number"
+                   value="1">
+                   <!-- onclick="funcao_valor_total()" -->
+
+            <a class="botaoMaisUm" id="botaoMaisUm"
+               href ="#"
+               onclick = "botaoMaisUm()"
+               title=""> + 1 </a>
+
+            <a class="botaoMenosUm" id="botaoMenosUm"
+               href ="#"
+               onclick = "botaoMenosUm()"
+               title=""> - 1 </a>
+
+
+          </div>
+
+          <!-- RESULTADO DO TOTAL DE ITENS COM VALOR UNITARIO- FEITO NO JS -->
+          <div id="inputCampoTotal">
+            <label>TOTAL R$  </label>
+            <input id="campoTotal"
+                       class ="valor_total_itens"
+                       name="valor_total_item"
+                       type="number"
+                       resultado = "readonly"
+                       step="0.01"
+                       value = "{{itemNoCarrinho.valor }}">
+
+            <!--
+            <input id="campoTotal2"
+                       class ="valor_total_itens"
+                       type="text"
+                       resultado = "readonly"
+                       step="0.01"
+                       value = "{{itemNoCarrinho.valor }}">
+                       -->
+
+
+          </div>
+
+          <div id = "alinhabotoes">
+            <a id="continuarComprando"
+              href = "{% url 'pedBebidas'%} "> << CONTINUAR COMPRANDO  </a>
+
+            <button type="submit" class="botaoAddCarrinho" id = "botaoAddCarrinho">
+              Adicionar ao Carrinho
+            </button>
+
+          </div>
+
+        </div>
+
+
+    </div>
+  </form>
+
+{% endblock %}

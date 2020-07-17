@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="telaLogin">
+
+
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+    <!--
+      <td>{{ form.username.label_tag }}</td>
+    -->
+
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+
+              <!--
+              <td>{{ form.username.label_tag }}</td>
+              -->
+              <td> E-Mail </td>
+               <td>{{ form.username }}</td>
+            </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+        </table>
+        <div class="botaoEntrar">
+            <input type="submit" value="ACESSAR SUA CONTA">
+        </div>
+
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+
+    <!--
+    <a id="naoTenhoCadastro" href = "{% url 'telaCadastroUsuario'%}">
+                    Não tenho cadastro
+    </a>
+    -->
+
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <!--
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    -->
+
+</div>
+{% endblock %}

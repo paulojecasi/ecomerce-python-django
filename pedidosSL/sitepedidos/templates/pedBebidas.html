@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% load static %}
+
+    <h1 id="titulo_pedido"> Peça sua Bebida</h1>
+
+        <div id="pedBebidas">
+            {% for listaBebidasNoSite in lista_bebidas %}
+
+                <ul style="list-style-type: none;" class="ladoALado">
+                    <li>
+                        {% if listaBebidasNoSite.foto %}
+                            <img class = "imagemProduto"
+                              src =" {{listaBebidasNoSite.foto.url}} " />
+                        {% else %}
+                            <img class = "imagemProduto"
+                              src =" {{listaBebidasNoSite.url_imagem}} ">
+
+                        {% endif %}
+                    </li>
+                    <div class = "corDeFundoPreco">
+                        <li id="fonte1"> {{listaBebidasNoSite.bebida}}      </li>
+                        <li id="fonte2"> {{listaBebidasNoSite.complemento}} </li>
+                        <li id="fonte3"> {{listaBebidasNoSite.tamanho}}     </li>
+                        <li id="fonte4">
+                            R$  {{listaBebidasNoSite.valor}}
+                            {% if user.is_authenticated %}
+                                <a class="botaoComprar"
+                                    href ="{% url 'colocarCarrinho' listaBebidasNoSite.id %}"
+                                    title="Colocar no carrinho!"> comprar </a>
+                            {% else %}
+                                <a class="botaoComprar"
+                                    href =""
+                                    onclick = "avisoFazerLogin()"
+                                    title="Colocar no carrinho!"> comprar </a>
+
+
+                            {% endif %}
+
+                        </li>
+                    </div>
+
+
+                </ul>
+            {% endfor %}
+        </div>
+
+{% endblock %}

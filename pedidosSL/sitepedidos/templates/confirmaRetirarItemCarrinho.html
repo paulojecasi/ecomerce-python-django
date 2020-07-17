@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% load static %}
+
+    <!--
+      OBS, para calculos no JS é utilizado as campos das seguntes tags
+        tag CLASS  vai os campos para somar, multplica e etc..
+        tag ID vira os resultados
+    -->
+
+  <form class="formRetiraItemCarrinho"
+        action="{% url 'deletaItemCarrinho' moveItemDoCarr.id %}"
+        method="POST">
+      {% csrf_token %}
+    <h1 id="titulo_pedido"> Colocar no Carrinho </h1>
+    <div id = "produtoEscolhido">
+        {% if moveItemDoCarr.produto.foto %}
+            <img class = "imagemProdutoEscolhido"
+              src =" {{ moveItemDoCarr.produto.foto.url }} " />
+        {% else %}
+            <img class = "imagemProdutoEscolhido"
+              src =" {{ moveItemDoCarr.produto.url_imagem }} " />
+
+        {% endif %}
+
+
+        <div id = "formataLetra">
+            <p id = "linha1" > {{ moveItemDoCarr.produto.bebida }} </p>
+            <p id = "linha2" > {{ moveItemDoCarr.produto.complemento }} </p>
+            <p id = "linha3" > {{ moveItemDoCarr.produto.tamanho }} </p>
+
+        </div>
+
+        <!-- ID FICA INVISILVE NA TELA -->
+        <!-- <div name="produto" style="display:none;"> {{ itemNoCarrinho.id }} </div> -->
+
+        <!-- <div name="produto"> {{ itemNoCarrinho.id }} </div> -->
+
+        <!-- Campos Invisiveis tipo HIDDEN -->
+        <input id="campoId"
+               class ="IdItem"
+               name="produto"
+               type="hidden"
+               value = "{{ moveItemDoCarr.id }}" >
+
+
+        <div id =inputValorUnitario>
+            <label> R$  </label>
+
+            <input id="campoValorUnitario2"
+                   class ="valorItem"
+                   type="text"
+                   value = "{{ moveItemDoCarr.valor_unitario }}">
+        </div>
+
+        <div id =inputQuantidade>
+
+            <label>Quantidade  </label>
+            <input id="campoQuantidade"
+                   class="quantidadeItens"
+                   name="quantidade"
+                   type="text"
+                   value="{{moveItemDoCarr.quantidade|floatformat:0}}"
+                   disabled="true"
+            >
+
+        </div>
+
+
+        <!-- RESULTADO DO TOTAL DE ITENS COM VALOR UNITARIO- FEITO NO JS -->
+        <div id="inputCampoTotal">
+            <label>TOTAL R$  </label>
+
+            <input id="campoTotal2"
+                       class ="valor_total_itens"
+                       type="text"
+                       resultado = "readonly"
+                       step="0.01"
+                       value = "{{moveItemDoCarr.valor_total_item }}">
+
+
+        </div>
+
+        <Div id="labelRetirarItemDoCarrinho">
+          <label>
+            <h3>
+              Retirar item do carrinho?
+            </h3>
+          </label>
+        </Div>
+
+        <button type="submit"
+                class="botaoDeletaItemCarrinho"
+                id = "botaoDeletaItemCarrinho">
+             S I M
+        </button>
+
+
+
+        <!--
+        <a id="continuarComprando"
+           href = "{% url 'pedBebidas'%} "> << CONTINUAR COMPRANDO  </a>
+        -->
+
+
+    </div>
+  </form>
+
+  <a class=""
+           href ="{% url 'itensDoCarrinho'%}"
+           title="">
+            <button type=""
+                class="botaoCancelaDeletaItemCarrinho"
+                id = "botaoCancelaDeletaItemCarrinho">
+                Cancelar
+            </button>
+  </a>
+
+{% endblock %}
