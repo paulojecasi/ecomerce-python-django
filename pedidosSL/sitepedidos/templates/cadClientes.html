@@ -333,6 +333,20 @@
                            value= "{{User_cliente.endereco_entrega.estado}}" >
                 </div>
 
+                <div id = "localizacaoEnt">
+                    <label> Localização (Lat-Lon) </label>
+                    <input id="latitudeEnt"
+                        class="latitudeEnt"
+                        name ="latitudeEnt"
+                        type ="text"
+                        value= "{{User_cliente.endereco_entrega.latitude}} " >
+                    <input id="longitudeEnt"
+                        class="longitudeEnt"
+                        name ="longitudeEnt"
+                        type ="text"
+                        value= "{{User_cliente.endereco_entrega.longitude}} " >
+                </div>
+
 
 
 
@@ -341,9 +355,13 @@
         </div>
 
         {% if User_cliente.cliente.primeiro_nome %}
-            <button id= "alterar" type="submit"> ATUALIZAR </button>
+            <button id= "alterar"
+                    onclick = "alteraVirgula()"
+                    type="submit"> ATUALIZAR </button>
         {% else %}
-            <button id= "cadastrar" type="submit"> CADASTRAR </button>
+            <button id= "cadastrar"
+                    onclick = "alteraVirgula()"
+                    type="submit"> CADASTRAR </button>
         {% endif %}
     </form>
 

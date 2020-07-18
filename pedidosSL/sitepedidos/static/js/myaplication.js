@@ -105,6 +105,14 @@ function botaoMenosUm(){
 
 }
 
+function alteraVirgula(){
+    document.getElementById("latitudeEnt").value = 
+            document.getElementById("latitudeEnt").value.replace(",", ".")
+    document.getElementById("longitudeEnt").value = 
+            document.getElementById("longitudeEnt").value.replace(",", ".")
+  
+}
+
 
 
 

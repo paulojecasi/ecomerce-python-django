@@ -9,47 +9,49 @@
         tag ID vira os resultados
     -->
 
-  <form class="formAtualizaCarrinho"
-        action="{% url 'confirmaAlteraItensDoCarrinho' altera_carrinho.id %}"
+  <form class="formRetiraItemCarrinho"
+        action="{% url 'deletaItemCarrinho' moveItemDoCarr.id %}"
         method="POST">
       {% csrf_token %}
     <h1 id="titulo_pedido"> Colocar no Carrinho </h1>
     <div id = "produtoEscolhido">
-
-        {% if altera_carrinho.produto.foto %}
+        {% if moveItemDoCarr.produto.foto %}
             <img class = "imagemProdutoEscolhido"
-             src =" {{ altera_carrinho.produto.foto.url }} " />
+              src =" {{ moveItemDoCarr.produto.foto.url }} " />
         {% else %}
             <img class = "imagemProdutoEscolhido"
-             src =" {{ altera_carrinho.produto.url_imagem }} " />
+              src =" {{ moveItemDoCarr.produto.url_imagem }} " />
+
         {% endif %}
 
+
         <div id = "formataLetra">
-            <p id = "linha1" > {{ altera_carrinho.produto.bebida }} </p>
-            <p id = "linha2" > {{ altera_carrinho.produto.complemento }} </p>
-            <p id = "linha3" > {{ altera_carrinho.produto.tamanho }} </p>
+            <p id = "linha1" > {{ moveItemDoCarr.produto.bebida }} </p>
+            <p id = "linha2" > {{ moveItemDoCarr.produto.complemento }} </p>
+            <p id = "linha3" > {{ moveItemDoCarr.produto.tamanho }} </p>
 
         </div>
 
+        <!-- ID FICA INVISILVE NA TELA -->
+        <!-- <div name="produto" style="display:none;"> {{ itemNoCarrinho.id }} </div> -->
+
+        <!-- <div name="produto"> {{ itemNoCarrinho.id }} </div> -->
+
+        <!-- Campos Invisiveis tipo HIDDEN -->
         <input id="campoId"
                class ="IdItem"
                name="produto"
                type="hidden"
-               value = "{{ altera_carrinho.id }}" >
+               value = "{{ moveItemDoCarr.id }}" >
 
 
         <div id =inputValorUnitario>
             <label> R$  </label>
-            <input id="campoValorUnitario"
-                   class ="valorItem"
-                   name="valor_unitario"
-                   type="number"
-                   value = "{{ altera_carrinho.valor_unitario }}" >
 
             <input id="campoValorUnitario2"
                    class ="valorItem"
                    type="text"
-                   value = "{{ altera_carrinho.valor_unitario }}" >
+                   value = "{{ moveItemDoCarr.valor_unitario }}">
         </div>
 
         <div id =inputQuantidade>
@@ -58,9 +60,10 @@
             <input id="campoQuantidade"
                    class="quantidadeItens"
                    name="quantidade"
-                   type="number"
-                   value="{{altera_carrinho.quantidade|floatformat:0 }}"
-                   onclick="funcao_valor_total()">
+                   type="text"
+                   value="{{moveItemDoCarr.quantidade|floatformat:0}}"
+                   disabled="true"
+            >
 
         </div>
 
@@ -68,45 +71,51 @@
         <!-- RESULTADO DO TOTAL DE ITENS COM VALOR UNITARIO- FEITO NO JS -->
         <div id="inputCampoTotal">
             <label>TOTAL R$  </label>
-            <input id="campoTotal"
-                       class ="valor_total_itens"
-                       name="valor_total_item"
-                       type="number"
-                       resultado = "readonly"
-                       step="0.01"
-                       value = "{{altera_carrinho.valor_total_item}}">
 
             <input id="campoTotal2"
                        class ="valor_total_itens"
                        type="text"
                        resultado = "readonly"
                        step="0.01"
-                       value = "{{altera_carrinho.valor_total_item}}">
+                       value = "{{moveItemDoCarr.valor_total_item }}">
 
 
         </div>
 
-        <a class="botaoMaisUm" id="botaoMaisUm"
-               href ="#"
-               onclick = "botaoMaisUm()"
-               title=""> + 1 </a>
+        <Div id="labelRetirarItemDoCarrinho">
+          <label>
+            <h3>
+              Retirar item do carrinho?
+            </h3>
+          </label>
+        </Div>
 
-        <a class="botaoMenosUm" id="botaoMenosUm"
-               href ="#"
-               onclick = "botaoMenosUm()"
-               title=""> - 1 </a>
-
-        <button type="submit" class="botaoAtualizarProduto" id = "botaoAtualizarProduto">
-            Atualizar Produto
+        <button type="submit"
+                class="botaoDeletaItemCarrinho"
+                id = "botaoDeletaItemCarrinho">
+             S I M
         </button>
 
+
+
+        <!--
         <a id="continuarComprando"
-           href = "{% url 'itensDoCarrinho'%} "> << RETORNAR SEM ATUALIZAR  </a>
-
-
+           href = "{% url 'pedBebidas'%} "> << CONTINUAR COMPRANDO  </a>
+        -->
 
 
     </div>
   </form>
 
+  <a class=""
+           href ="{% url 'itensDoCarrinho'%}"
+           title="">
+            <button type=""
+                class="botaoCancelaDeletaItemCarrinho"
+                id = "botaoCancelaDeletaItemCarrinho">
+                Cancelar
+            </button>
+  </a>
+
 {% endblock %}
+

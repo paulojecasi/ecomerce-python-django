@@ -247,6 +247,8 @@ def gravaAlteraClienteNovo(request,id):   # aqui vamos gravar os dados do form n
             alteraCLI.estado = request.POST.get('estado');
             alteraCLI.telcelular = request.POST.get('telcelular');
             alteraCLI.telfixo = request.POST.get('telfixo');
+            alteraCLI.latitude = request.POST.get('latitudeEnt');
+            alteraCLI.longitude = request.POST.get('longitudeEnt');
 
             alteraCLI.save();
             messages.info(request, 'Cliente atualizado com sucesso')
@@ -270,6 +272,8 @@ def gravaAlteraClienteNovo(request,id):   # aqui vamos gravar os dados do form n
             gravaCLI.estado = request.POST.get('estado');
             gravaCLI.telcelular = request.POST.get('telcelular');
             gravaCLI.telfixo = request.POST.get('telfixo');
+            gravaCLI.latitude = request.POST.get('latitudeEnt');
+            gravaCLI.longitude = request.POST.get('longitudeEnt');
 
             gravaCLI.save()
 
@@ -286,6 +290,8 @@ def gravaAlteraClienteNovo(request,id):   # aqui vamos gravar os dados do form n
             alteraEND_ENT.bairro = request.POST.get('bairroEnt');
             alteraEND_ENT.cidade = request.POST.get('cidadeEnt');
             alteraEND_ENT.estado = request.POST.get('estadoEnt');
+            alteraEND_ENT.latitude = request.POST.get('latitudeEnt');
+            alteraEND_ENT.longitude = request.POST.get('longitudeEnt');
 
 
             alteraEND_ENT.save()
@@ -300,6 +306,8 @@ def gravaAlteraClienteNovo(request,id):   # aqui vamos gravar os dados do form n
             gravaEND_ENT.bairro = request.POST.get('bairroEnt');
             gravaEND_ENT.cidade = request.POST.get('cidadeEnt');
             gravaEND_ENT.estado = request.POST.get('estadoEnt');
+            gravaEND_ENT.latitude = request.POST.get('latitudeEnt');
+            gravaEND_ENT.longitude = request.POST.get('longitudeEnt');
 
             gravaEND_ENT.save()
 
